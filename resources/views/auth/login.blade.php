@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://ajifatur.github.io/assets/spandiv.min.css">
     <link rel="stylesheet" href="https://spandiv.xyz/wp-content/themes/spandiv/style.css?ver=2.3">
-    <link rel="icon" type="image/x-icon" href="{{ asset ('assets/images/icon/icon-spandiv.png')}}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/icon/icon-spandiv.png') }}">
 
     <title>Log in | {{ config('app.name') }}</title>
     <style>
@@ -62,8 +62,8 @@
                         <div class="small text-danger text-start">{{ $errors->first('password') }}</div>
                         @endif
                     </div>
-                    <button class="w-100 btn btn-primary rounded-3 mb-5" type="submit">Log in</button>
-                    <div class="text-center">Belum punya akun?<br><a href="{{ route('auth.login.provider', ['provider' => 'google']) }}">Daftar menggunakan Akun Googlemu yuk!</a></div>
+                    <button class="w-100 btn btn-primary rounded-3 mb-3" type="submit">Log in</button>
+                    <a class="w-100 btn btn-danger rounded-3" href="{{ route('auth.login.provider', ['provider' => 'google']) }}">Atau Log in via Google</a>
                 </form>
                 <div class="w-75"></div>
             </div>
