@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Test;
 
 use Auth;
-use PDF;
+use Barryvdh\DomPDF\Facade\Pdf as PDF;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Dompdf\FontMetrics;
@@ -278,7 +278,7 @@ class DISC24Controller extends Controller
 		
 		// Set the MOST, LEAST, CHANGE
 		$most = $description->description[$index['most'][0]];
-		$least = $description->description[$index['least'][0]];
+		$least = array_key_exists(0, $index['least']) ? $description->description[$index['least'][0]] : ['karakteristik' => '', 'tipe' => ''];
 		$change = $description->description[$index['change'][0]];
         
         // PDF
